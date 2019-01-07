@@ -72,7 +72,7 @@ class paymentsController extends AbstractController
 
     /**
      * get payments via type
-     * @Route("/type/{type}", name="paymentType")
+     * @Route("/sms/{type}", name="paymentType")
      * @Template("frontend/payments/details.html.twig")
      * @return array
      */
