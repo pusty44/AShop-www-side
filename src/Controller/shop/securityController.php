@@ -12,7 +12,7 @@ use App\Entity\Groups;
 use App\Entity\UsersEntity;
 use App\Form\UsersType;
 use Symfony\Component\HttpFoundation\Request;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -47,6 +47,13 @@ class securityController extends AbstractController
     }
 
     /**
+     * Function to logout
+     *
+     * @Route("/logout", name="logout")
+     */
+    public function logout() {}
+
+    /**
      * Function to register new users with login/email and password
      *
      * @Route("/register", name="register")
@@ -63,8 +70,9 @@ class securityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
             $user->setPassword($password);
-            $user->setIsActive(true);
+
             $user->setGroupId($this->getDoctrine()->getRepository(Groups::class)->findOneBy(['id' => 2]));
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();

@@ -18,7 +18,7 @@ use App\Service\shop\payments\przelewy24Service;
 use App\Service\shop\payments\pukawkaService;
 use App\Service\shop\payments\tPayService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**

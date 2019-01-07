@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: n.o.x
  * Date: 07/01/2019
- * Time: 00:19
+ * Time: 09:54
  */
 
 namespace App\Entity;
@@ -13,8 +13,10 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @ORM\Entity
  * @ORM\Table(name="ashop_groups")
  * @UniqueEntity(fields="id")
+ * @UniqueEntity(fields="name", message="Nazwa grupy jest już w użyciu")
  */
 class Groups
 {

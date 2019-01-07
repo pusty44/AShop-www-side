@@ -17,7 +17,7 @@ use Symfony\Component\Security\Core\Role\Role;
 
 
 /**
- * @ORM\Entity(repositoryClass="App\Core\Repository\UsersRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\UsersRepository")
  * @ORM\Table(name="ashop_users")
  * @UniqueEntity(fields="email", message="Email jest już w użyciu")
  * @UniqueEntity(fields="username", message="Login jest już w użyciu")
@@ -61,7 +61,7 @@ class UsersEntity implements AdvancedUserInterface, \Serializable
 
     /**
      * @ORM\ManyToOne(targetEntity="Groups")
-     * @ORM\JoinColumn(name="group", referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(name="groupId", referencedColumnName="id", nullable=true)
      */
     private $groupId; // klucz obcy dla shop_groups.id // default 2 - as user.
 
@@ -163,7 +163,7 @@ class UsersEntity implements AdvancedUserInterface, \Serializable
         return $this->username;
     }
 
-    public function setLogin($username)
+    public function setUsername($username)
     {
         $this->username = $username;
     }
@@ -270,7 +270,4 @@ class UsersEntity implements AdvancedUserInterface, \Serializable
     {
         $this->groupId = $groupId;
     }
-
-
-
 }

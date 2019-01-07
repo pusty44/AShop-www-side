@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: n.o.x
  * Date: 07/01/2019
- * Time: 00:32
+ * Time: 10:10
  */
 
 namespace App\Entity;
@@ -12,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
+ * @ORM\Entity
  * @ORM\Table(name="ashop_groups_permissions")
  * @UniqueEntity(fields="id")
  */
@@ -25,7 +26,8 @@ class GroupPermissions
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="Groups")
+     * @ORM\JoinColumn(name="groupId", referencedColumnName="id", nullable=true)
      */
     private $groupId; // klucz obcy dla shop_groups.id
 

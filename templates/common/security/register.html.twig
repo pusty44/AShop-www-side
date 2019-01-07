@@ -40,11 +40,8 @@
                                         </label>
                                         <label class="form-group has-float-label mb-4">
                                             {{ form_widget(form.authData, { 'attr': {'class': 'form-control'} }) }}
-<<<<<<< HEAD
                                             <span>Steam ID 32<small style="color: #ff0000;">*</small></span>
-=======
                                             <span>Steam ID 32</span>
->>>>>>> master
                                         </label>
                                         <div class="row">
                                             <div class="col-md-8">
@@ -52,6 +49,7 @@
                                                     w związku z obsługą zamówienia internetowego. Podanie danych jest dobrowolne, ale niezbędne do przetworzenia zapytania.</p>
                                             </div>
                                             <div class="col-md-4">
+                                                {{ form_row(form._token) }}
                                                 <button class="btn btn-primary btn-lg btn-shadow" style="width: 100%; padding: .75rem 0;" type="submit">REJESTRUJ</button>
                                             </div>
                                         </div>
