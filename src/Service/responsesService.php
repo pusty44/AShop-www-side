@@ -32,5 +32,4 @@ class responsesService
     function getResponse(int $id){
         return $this->response[$id];
     }
-
 }
