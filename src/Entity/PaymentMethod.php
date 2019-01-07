@@ -61,4 +61,116 @@ class PaymentMethod
      * @ORM\Column(type="string", length=32)
      */
     private $methodName;
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type): void
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSmskey()
+    {
+        return $this->smskey;
+    }
+
+    /**
+     * @param mixed $smskey
+     */
+    public function setSmskey($smskey): void
+    {
+        $this->smskey = $smskey;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApikey()
+    {
+        return $this->apikey;
+    }
+
+    /**
+     * @param mixed $apikey
+     */
+    public function setApikey($apikey): void
+    {
+        $this->apikey = $apikey;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApisecret()
+    {
+        return $this->apisecret;
+    }
+
+    /**
+     * @param mixed $apisecret
+     */
+    public function setApisecret($apisecret): void
+    {
+        $this->apisecret = $apisecret;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getServiceId()
+    {
+        return $this->serviceId;
+    }
+
+    /**
+     * @param mixed $serviceId
+     */
+    public function setServiceId($serviceId): void
+    {
+        $this->serviceId = $serviceId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMethodName()
+    {
+        return $this->methodName;
+    }
+
+    /**
+     * @param mixed $methodName
+     */
+    public function setMethodName($methodName): void
+    {
+        $this->methodName = $methodName;
+    }
 }

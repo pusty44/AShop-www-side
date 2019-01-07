@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\GroupPermissionsRepository")
  * @ORM\Table(name="ashop_groups_permissions")
  * @UniqueEntity(fields="id")
  */
@@ -40,4 +40,52 @@ class GroupPermissions
      * @ORM\Column(type="string", length=128)
      */
     private $value;
+
+    /**
+     * @return mixed
+     */
+    public function getGroupId()
+    {
+        return $this->groupId;
+    }
+
+    /**
+     * @param mixed $groupId
+     */
+    public function setGroupId($groupId): void
+    {
+        $this->groupId = $groupId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param mixed $value
+     */
+    public function setValue($value): void
+    {
+        $this->value = $value;
+    }
 }

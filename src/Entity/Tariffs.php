@@ -13,6 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @ORM\Entity(repositoryClass="App\Repository\TariffsRepository")
  * @ORM\Table(name="ashop_tariffs")
  * @UniqueEntity(fields="id")
  */
@@ -26,8 +27,8 @@ class Tariffs
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="PaymentMethod")
+     * @ORM\JoinColumn(name="paymentMethod", referencedColumnName="id", nullable=true)
      */
     private $paymentMethodId; // klucz obcy dla ashop_payment_methods.id
 
@@ -48,4 +49,68 @@ class Tariffs
      * @Assert\NotBlank()
      */
     private $netto;
+
+    /**
+     * @return mixed
+     */
+    public function getPaymentMethodId()
+    {
+        return $this->paymentMethodId;
+    }
+
+    /**
+     * @param mixed $paymentMethodId
+     */
+    public function setPaymentMethodId($paymentMethodId): void
+    {
+        $this->paymentMethodId = $paymentMethodId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSmsNumber()
+    {
+        return $this->smsNumber;
+    }
+
+    /**
+     * @param mixed $smsNumber
+     */
+    public function setSmsNumber($smsNumber): void
+    {
+        $this->smsNumber = $smsNumber;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBrutto()
+    {
+        return $this->brutto;
+    }
+
+    /**
+     * @param mixed $brutto
+     */
+    public function setBrutto($brutto): void
+    {
+        $this->brutto = $brutto;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNetto()
+    {
+        return $this->netto;
+    }
+
+    /**
+     * @param mixed $netto
+     */
+    public function setNetto($netto): void
+    {
+        $this->netto = $netto;
+    }
 }

@@ -13,6 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @ORM\Entity(repositoryClass="App\Repository\AdminLoginLogsRepository")
  * @ORM\Table(name="ashop_admin_login_logs")
  * @UniqueEntity(fields="id")
  */
@@ -26,14 +27,14 @@ class AdminLoginLogs
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="UsersEntity")
+     * @ORM\JoinColumn(name="adminName", referencedColumnName="username", nullable=true)
      */
-    private $adminId; // klucz obcy dla ashop_users.id
+    private $adminName; // klucz obcy dla ashop_users.username
 
     /**
- * @ORM\Column(type="string", nullable=true, options={"default": NULL})
- */
+    * @ORM\Column(type="string", nullable=true, options={"default": NULL})
+    */
     private $adminIp;
 
     /**
@@ -45,4 +46,36 @@ class AdminLoginLogs
      * @ORM\Column(type="boolean", options={"default" : false})
      */
     private $success;
+
+    /**
+     * @return mixed
+     */
+    public function getAdminName()
+    {
+        return $this->adminName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAdminIp()
+    {
+        return $this->adminIp;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSuccess()
+    {
+        return $this->success;
+    }
 }

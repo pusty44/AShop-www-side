@@ -13,6 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @ORM\Entity(repositoryClass="App\Repository\AdminLogsRepository")
  * @ORM\Table(name="ashop_admin_logs")
  * @UniqueEntity(fields="id")
  */
@@ -26,10 +27,10 @@ class AdminLogs
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="UsersEntity")
+     * @ORM\JoinColumn(name="adminName", referencedColumnName="username", nullable=true)
      */
-    private $adminId; // klucz obcy dla ashop_users.id
+    private $adminName; // klucz obcy dla ashop_users.username
 
     /**
      * @ORM\Column(type="string", nullable=true, options={"default": NULL})
@@ -45,4 +46,68 @@ class AdminLogs
      * @ORM\Column(type="datetime")
      */
     private $date;
+
+    /**
+     * @return mixed
+     */
+    public function getAdminName()
+    {
+        return $this->adminName;
+    }
+
+    /**
+     * @param mixed $adminName
+     */
+    public function setAdminName($adminName): void
+    {
+        $this->adminName = $adminName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAdminIp()
+    {
+        return $this->adminIp;
+    }
+
+    /**
+     * @param mixed $adminIp
+     */
+    public function setAdminIp($adminIp): void
+    {
+        $this->adminIp = $adminIp;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content): void
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param mixed $date
+     */
+    public function setDate($date): void
+    {
+        $this->date = $date;
+    }
 }

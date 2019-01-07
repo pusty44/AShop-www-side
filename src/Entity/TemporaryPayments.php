@@ -13,6 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @ORM\Entity(repositoryClass="App\Repository\TemporaryPaymentsRepository")
  * @ORM\Table(name="ashop_temporary_payments")
  * @UniqueEntity(fields="chcksum")
  */
@@ -25,14 +26,14 @@ class TemporaryPayments
     private $chcksum;
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="Servers")
+     * @ORM\JoinColumn(name="server", referencedColumnName="id", nullable=true)
      */
     private $serverId; // klucz obcy dla ashop_servers.id
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="Services")
+     * @ORM\JoinColumn(name="service", referencedColumnName="id", nullable=true)
      */
     private $serviceId; // klucz obcy dla ashop_services.id
 
@@ -55,4 +56,116 @@ class TemporaryPayments
      * @ORM\Column(type="datetime")
      */
     private $date;
+
+    /**
+     * @return mixed
+     */
+    public function getChcksum()
+    {
+        return $this->chcksum;
+    }
+
+    /**
+     * @param mixed $chcksum
+     */
+    public function setChcksum($chcksum): void
+    {
+        $this->chcksum = $chcksum;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getServerId()
+    {
+        return $this->serverId;
+    }
+
+    /**
+     * @param mixed $serverId
+     */
+    public function setServerId($serverId): void
+    {
+        $this->serverId = $serverId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getServiceId()
+    {
+        return $this->serviceId;
+    }
+
+    /**
+     * @param mixed $serviceId
+     */
+    public function setServiceId($serviceId): void
+    {
+        $this->serviceId = $serviceId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @param mixed $amount
+     */
+    public function setAmount($amount): void
+    {
+        $this->amount = $amount;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthData()
+    {
+        return $this->authData;
+    }
+
+    /**
+     * @param mixed $authData
+     */
+    public function setAuthData($authData): void
+    {
+        $this->authData = $authData;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status): void
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param mixed $date
+     */
+    public function setDate($date): void
+    {
+        $this->date = $date;
+    }
 }

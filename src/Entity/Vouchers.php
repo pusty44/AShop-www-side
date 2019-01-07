@@ -13,6 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @ORM\Entity(repositoryClass="App\Repository\VouchersRepository")
  * @ORM\Table(name="ashop_vouchers")
  * @UniqueEntity(fields="id")
  */
@@ -26,8 +27,8 @@ class Vouchers
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="Prices")
+     * @ORM\JoinColumn(name="price", referencedColumnName="id", nullable=true)
      */
     private $priceId; // klucz obcy dla ashop_prices.id
 
@@ -35,4 +36,36 @@ class Vouchers
      * @ORM\Column(type="string", length=6)
      */
     private $code;
+
+    /**
+     * @return mixed
+     */
+    public function getPriceId()
+    {
+        return $this->priceId;
+    }
+
+    /**
+     * @param mixed $priceId
+     */
+    public function setPriceId($priceId): void
+    {
+        $this->priceId = $priceId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param mixed $code
+     */
+    public function setCode($code): void
+    {
+        $this->code = $code;
+    }
 }
