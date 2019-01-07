@@ -8,13 +8,10 @@
 
 namespace App\Entity;
 
-<<<<<<< HEAD
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
-=======
->>>>>>> master
 /**
  * @ORM\Table(name="ashop_noffications")
  * @UniqueEntity(fields="id")
