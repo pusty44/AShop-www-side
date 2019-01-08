@@ -61,7 +61,7 @@ class UsersType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Wprowadź swój login'
+                    'placeholder' => 'Wprowadź swoje STEAM_ID'
                 ],
             ])
         ;

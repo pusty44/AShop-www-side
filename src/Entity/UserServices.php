@@ -27,14 +27,14 @@ class UserServices
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="Servers")
+     * @ORM\JoinColumn(name="server", referencedColumnName="id", nullable=true)
      */
     private $serverId; // klucz obcy dla ashop_servers.id
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="Services")
+     * @ORM\JoinColumn(name="service", referencedColumnName="id", nullable=true)
      */
     private $serviceId; // klucz obcy dla ashop_services.id
 
@@ -59,99 +59,4 @@ class UserServices
      */
     private $expires;
 
-    /**
-     * @return mixed
-     */
-    public function getServerId()
-    {
-        return $this->serverId;
-    }
-
-    /**
-     * @param mixed $serverId
-     */
-    public function setServerId($serverId): void
-    {
-        $this->serverId = $serverId;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getServiceId()
-    {
-        return $this->serviceId;
-    }
-
-    /**
-     * @param mixed $serviceId
-     */
-    public function setServiceId($serviceId): void
-    {
-        $this->serviceId = $serviceId;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param mixed $value
-     */
-    public function setValue($value): void
-    {
-        $this->value = $value;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAuthData()
-    {
-        return $this->authData;
-    }
-
-    /**
-     * @param mixed $authData
-     */
-    public function setAuthData($authData): void
-    {
-        $this->authData = $authData;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getBoughtDate()
-    {
-        return $this->boughtDate;
-    }
-
-    /**
-     * @param mixed $boughtDate
-     */
-    public function setBoughtDate($boughtDate): void
-    {
-        $this->boughtDate = $boughtDate;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getExpires()
-    {
-        return $this->expires;
-    }
-
-    /**
-     * @param mixed $expires
-     */
-    public function setExpires($expires): void
-    {
-        $this->expires = $expires;
-    }
 }
