@@ -23,7 +23,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
  * Default route for payments
- * @Route("/pay")
+ * @Route("/buy/{name}/{server}/pay")
 */
 class paymentsController extends AbstractController
 {

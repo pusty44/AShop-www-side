@@ -1,0 +1,12 @@
+{% extends 'frontend/base.html.twig' %}
+ 
+{% block body %}
+    <fieldset style="width:400px">
+        <legend>Buy Now :) - select + onload - info </legend>
+        <ul>
+            {% for server in avaibleServers %}
+                <li><b>{{ server }}</b></li>
+            {% endfor %}
+        </ul>
+    </fieldset>
+{% endblock %}
