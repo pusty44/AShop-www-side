@@ -8,8 +8,10 @@
 
 namespace App\Repository;
 
+use Doctrine\ORM\EntityRepository;
 
-class UserServicesRepository
+
+class UserServicesRepository extends EntityRepository
 {
 
 }

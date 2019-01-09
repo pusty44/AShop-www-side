@@ -88,4 +88,12 @@ class UrlShortener
     {
         $this->expires = $expires;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

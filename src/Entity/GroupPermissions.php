@@ -88,4 +88,12 @@ class GroupPermissions
     {
         $this->value = $value;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

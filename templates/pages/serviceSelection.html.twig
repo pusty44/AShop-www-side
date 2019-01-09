@@ -1,0 +1,23 @@
+{% block body %}
+    <fieldset style="width:400px">
+        <legend>Describe content</legend>
+        <ul>
+            <li>opis uslugi: <b>{{ serviceDesc }}</b></li>
+            <li>liczba kupionych uslug: <b>{{ bought }}</b></li>
+            <li>ostatni kupujacy: <b>{{ last_buyer }}</b></li>
+            <li>dostepne serwery:
+                {% for server in avaibleServers %}
+                    <b>{{ server }}</b>,
+                {% endfor %}
+            </li>
+        </ul>
+    </fieldset>
+
+
+    <fieldset style="width:400px">
+        <legend>Buy Now :)</legend>
+        <ul>
+            <li></li>
+        </ul>
+    </fieldset>
+{% endblock %}

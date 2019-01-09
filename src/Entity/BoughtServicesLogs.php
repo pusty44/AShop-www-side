@@ -13,7 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\BoughtServicesLogsRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\BoughtServicesRepository")
  * @ORM\Table(name="ashop_bought_services_logs")
  * @UniqueEntity(fields="id")
  */
@@ -42,13 +42,13 @@ class BoughtServicesLogs
      * @ORM\ManyToOne(targetEntity="Servers")
      * @ORM\JoinColumn(name="server", referencedColumnName="id", nullable=true)
      */
-    private $serverId; // klucz obcy dla ashop_servers.id
+    private $server; // klucz obcy dla ashop_servers.id
 
     /**
      * @ORM\ManyToOne(targetEntity="Services")
      * @ORM\JoinColumn(name="service", referencedColumnName="id", nullable=true)
      */
-    private $serviceId; // klucz obcy dla ashop_services.id
+    private $service; // klucz obcy dla ashop_services.id
 
     /**
      * @ORM\Column(type="integer")
@@ -197,5 +197,13 @@ class BoughtServicesLogs
     public function setDate($date): void
     {
         $this->date = $date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

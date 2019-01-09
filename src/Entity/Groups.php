@@ -68,4 +68,12 @@ class Groups
     {
         $this->style = $style;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

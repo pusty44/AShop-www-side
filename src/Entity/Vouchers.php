@@ -68,4 +68,12 @@ class Vouchers
     {
         $this->code = $code;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

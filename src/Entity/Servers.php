@@ -152,4 +152,12 @@ class Servers
         $this->connected = $connected;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
 }

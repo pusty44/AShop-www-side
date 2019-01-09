@@ -78,4 +78,12 @@ class AdminLoginLogs
     {
         return $this->success;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

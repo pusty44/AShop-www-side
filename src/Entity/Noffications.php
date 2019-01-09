@@ -130,4 +130,12 @@ class Noffications
     {
         $this->date = $date;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

@@ -193,4 +193,12 @@ class Services
     {
         $this->orderNumber = $orderNumber;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

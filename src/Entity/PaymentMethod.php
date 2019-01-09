@@ -173,4 +173,12 @@ class PaymentMethod
     {
         $this->methodName = $methodName;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

@@ -113,4 +113,12 @@ class Tariffs
     {
         $this->netto = $netto;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

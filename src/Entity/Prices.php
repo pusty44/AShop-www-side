@@ -30,19 +30,18 @@ class Prices
      * @ORM\ManyToOne(targetEntity="Services")
      * @ORM\JoinColumn(name="service", referencedColumnName="id", nullable=true)
      */
-    private $serviceId; // klucz obcy dla ashop_services.id
+    private $service; // klucz obcy dla ashop_services.id
 
     /**
-     * @ORM\ManyToOne(targetEntity="Servers")
-     * @ORM\JoinColumn(name="server", referencedColumnName="id", nullable=true)
+     * @ORM\Column(type="string", nullable=true, options={"default": NULL})
      */
-    private $serverId; // klucz obcy dla ashop_servers.id
+    private $server;
 
     /**
      * @ORM\ManyToOne(targetEntity="Tariffs")
      * @ORM\JoinColumn(name="tariff", referencedColumnName="id", nullable=true)
      */
-    private $tariffId; // klucz obcy dla ashop_tariffs.id
+    private $tariff; // klucz obcy dla ashop_tariffs.id
 
     /**
      * @ORM\Column(type="integer")
@@ -55,15 +54,15 @@ class Prices
      */
     public function getServiceId()
     {
-        return $this->serviceId;
+        return $this->service;
     }
 
     /**
-     * @param mixed $serviceId
+     * @param mixed $service
      */
-    public function setServiceId($serviceId): void
+    public function setServiceId($service): void
     {
-        $this->serviceId = $serviceId;
+        $this->service = $service;
     }
 
     /**
@@ -71,15 +70,15 @@ class Prices
      */
     public function getServerId()
     {
-        return $this->serverId;
+        return $this->server;
     }
 
     /**
-     * @param mixed $serverId
+     * @param mixed $server
      */
-    public function setServerId($serverId): void
+    public function setServerId($server): void
     {
-        $this->serverId = $serverId;
+        $this->server = $server;
     }
 
     /**
@@ -87,15 +86,15 @@ class Prices
      */
     public function getTariffId()
     {
-        return $this->tariffId;
+        return $this->tariff;
     }
 
     /**
-     * @param mixed $tariffId
+     * @param mixed $tariff
      */
-    public function setTariffId($tariffId): void
+    public function setTariffId($tariff): void
     {
-        $this->tariffId = $tariffId;
+        $this->tariff = $tariff;
     }
 
     /**
@@ -112,5 +111,13 @@ class Prices
     public function setValue($value): void
     {
         $this->value = $value;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }
