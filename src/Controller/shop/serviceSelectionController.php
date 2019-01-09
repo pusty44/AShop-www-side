@@ -35,8 +35,8 @@ class serviceSelectionController extends AbstractController
     /**
      * Select service
      *
-     * @Route("/buy/{name}", name="service_selection")
-     * @Entity("name", expr="repository.findByName(name)")
+     * @Route("/info/{service}", name="service_selection")
+     * @Entity("service", expr="repository.findByName(service)")
      */
     public function serviceSelect(Services $service)
     {
@@ -80,36 +80,5 @@ class serviceSelectionController extends AbstractController
             'last_buyer' => $lastBuyerName,
             'avaibleServers' => $avaibleServers
             ]);
-    }
-
-    /**
-     * Select server
-     *
-     * @Route("/buy/{name}/servery", name="server_selection")
-     * @return \Symfony\Component\HttpFoundation\Response
-     * @throws \Exception
-     */
-    public function serverSelection(Services $service)
-    {
-        // get service's avaible servers
-        $avaibleServers = array();
-        $pricesRepo = $this->getDoctrine()->getRepository(Prices::class);
-        $serversRepo = $this->getDoctrine()->getRepository(Servers::class);
-        $avaibleServersString = $pricesRepo->GetAvaibleServersForService($service->GetId());
-
-        // loop query results
-        for($i = 0; $i < count($avaibleServersString); $i++){
-            $output = explode("-", $avaibleServersString[$i]['server']); // explode servers string from 'id-id-id-id' to get id ^^
-
-            foreach($output as $opt)
-                if(!in_array($opt, $avaibleServers)) // add server to array if he isn't inside
-                    array_push($avaibleServers, $serversRepo->find($opt)->GetName());
-        }
-
-
-
-
-        // render this
-        return $this->render('pages/serverSelection.html.twig', ['avaibleServers' => $avaibleServers]);
     }
 }

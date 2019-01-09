@@ -2,6 +2,7 @@
     <fieldset style="width:400px">
         <legend>Describe content</legend>
         <ul>
+            <li>Usluga: <b>{{ service.getName() }}</b></li>
             <li>opis uslugi: <b>{{ service.getWebDescription() }}</b></li>
             <li>liczba kupionych uslug: <b>{{ bought }}</b></li>
             <li>ostatni kupujacy: <b>{{ last_buyer }}</b></li>
@@ -17,7 +18,7 @@
         <legend>Buy Now :)</legend>
         <ul>
             {% for server in avaibleServers %}
-                <li><b><a href="{{ path('server_selection', {'name': service.getName()}) }}">{{ server }}</a></b></li>
+                <li><b><a href="{{ path('server_selection', {'service': service.getName(), 'server': server}) }}">{{ server }}</a></b></li>
             {% endfor %}
         </ul>
     </fieldset>

@@ -1,12 +1,16 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Dawid Pierzak
+ * User: n.o.x
  * Date: 04.01.2019
  * Time: 01:29
  */
 
 namespace App\Controller\shop;
+
+use App\Entity\Prices;
+use App\Entity\Servers;
+use App\Entity\Services;
 
 use App\Service\shop\payments\csSetiService;
 use App\Service\shop\payments\GoSettiService;
@@ -14,17 +18,20 @@ use App\Service\shop\payments\hostPlayService;
 use App\Service\shop\payments\liveserverService;
 use App\Service\shop\payments\microSmsService;
 use App\Service\shop\payments\oneShotOneKillService;
+use App\Service\shop\payments\paymentType;
 use App\Service\shop\payments\przelewy24Service;
 use App\Service\shop\payments\pukawkaService;
 use App\Service\shop\payments\tPayService;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
  * Default route for payments
- * @Route("/buy/{name}/{server}/pay")
-*/
+ *
+ * Class paymentsController
+ * @package App\Controller
+ */
 class paymentsController extends AbstractController
 {
     private $csSeti;
@@ -36,6 +43,7 @@ class paymentsController extends AbstractController
     private $przelewy24;
     private $tPay;
     private $liveserver;
+    private $paymentType;
 
     public function __construct(
         csSetiService $csSetiService,
@@ -46,7 +54,8 @@ class paymentsController extends AbstractController
         przelewy24Service $przelewy24Service,
         pukawkaService $pukawkaService,
         tPayService $tPayService,
-        liveserverService $liveserver)
+        liveserverService $liveserver,
+        paymentType $paymentType)
     {
         $this->csSeti           = $csSetiService;
         $this->goSetti          = $goSettiService;
@@ -57,12 +66,12 @@ class paymentsController extends AbstractController
         $this->pukawka          = $pukawkaService;
         $this->tPay             = $tPayService;
         $this->liveserver       = $liveserver;
+        $this->paymentType      = $paymentType;
     }
 
     /**
      * get payments list
      * @Route("/list", name="paymentList")
-     * @Template("frontend/payments/list.html.twig")
      * @return array
      */
     public function paymentList(){
@@ -72,8 +81,8 @@ class paymentsController extends AbstractController
     /**
      * get payments via type
      * @Route("/sms/{type}", name="paymentType")
-     * @Template("frontend/payments/details.html.twig")
-     * @return array
+     * @param string $type
+     * @return csSetiService|GoSettiService|hostPlayService|microSmsService|oneShotOneKillService|przelewy24Service|pukawkaService
      */
     public function paymentDetails(string $type){
         if($type == 'cssetti') $pay = $this->csSeti;
@@ -86,7 +95,33 @@ class paymentsController extends AbstractController
         else if($type == 'tpay') $pay = $this->tPay;
         else if($type == 'liveserver') $pay = $this->liveserver;
         else $pay = false;
-        return [];
+        return $pay;
     }
 
+
+    /**
+     * Default route for payments
+     * @Route("/buy/{service}/{server}/{payment}/", name="payment_selection")
+     */
+    public function paymentTypeSelect($service, $server, $payment)
+    {
+        $servicesRepo = $this->getDoctrine()->getRepository(Services::class);
+        $serversRepo = $this->getDoctrine()->getRepository(Servers::class);
+        $pricesRepo = $this->getDoctrine()->getRepository(Prices::class);
+
+        // if there is no service or server with this names or wrong payment type - throw exception
+        if(!$servicesRepo->findOneBy(['name' => $service])
+            || !$serversRepo->findOneBy(['name' => $server])
+            || !($payment == 'sms' || $payment == 'paysafecard' || $payment == 'transfer'))
+            throw $this->createNotFoundException('Bad credentials');
+
+        // Get prices for specified payment types
+        $prices = $pricesRepo->GetPricesFor($servicesRepo->findOneBy(['name' => $service])->GetId(), $this->paymentType->GetPaymentTypeByName($payment));
+        
+        if(count($prices))
+            print_r($prices);
+        else echo 'jebac';
+        
+        return $this->render('pages/valueSelection.html.twig');
+    }
 }

@@ -4,9 +4,9 @@
     <fieldset style="width:400px">
         <legend>Buy Now :) - select + onload - info </legend>
         <ul>
-            {% for server in avaibleServers %}
-                <li><b>{{ server }}</b></li>
-            {% endfor %}
+            <li><b><a href="{{ path('payment_selection', {'service': service, 'server': server, 'payment': 'sms'}) }}">SMS</a></b></li>
+            <li><b><a href="{{ path('payment_selection', {'service': service, 'server': server, 'payment': 'paysafecard'}) }}">PaySafeCard</a></b></li>
+            <li><b><a href="{{ path('payment_selection', {'service': service, 'server': server, 'payment': 'transfer'}) }}">Przelew</a></b></li>
         </ul>
     </fieldset>
 {% endblock %}

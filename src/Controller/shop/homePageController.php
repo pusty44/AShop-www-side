@@ -8,6 +8,7 @@
 
 namespace App\Controller\shop;
 
+use App\Entity\Services;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -29,6 +30,8 @@ class homePageController extends AbstractController
      */
     public function homePage()
     {
-        return $this->render('pages/homepage.html.twig');
+        $servicesRepo = $this->getDoctrine()->getRepository(Services::class);
+        $services = $servicesRepo->findAll();
+        return $this->render('pages/homepage.html.twig', ['services' => $services]);
     }
 }

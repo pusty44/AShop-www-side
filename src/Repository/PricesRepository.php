@@ -26,4 +26,22 @@ class PricesRepository extends EntityRepository
         $query = $qb->getQuery();
         return $query->getArrayResult();
     }
+
+    /**
+     * Retrieves servers id string like 'id-id-id-id'
+     * @param $id
+     * @return mixed
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function GetPricesFor($serviceid, $paymentType){
+        $qb = $this->createQueryBuilder('p');
+        $qb->join('p.tariff', 't', 'WITH', 'p.tariff = t.id')
+            ->join('t.paymentMethodId', 'm', 'WITH', 't.paymentMethodId = m.id')
+            ->where('p.service = :service')
+            ->andWhere('m.type = :type')
+            ->setParameter('service', $serviceid)
+            ->setParameter('type', $paymentType);
+        $query = $qb->getQuery();
+        return $query->getArrayResult();
+    }
 }
