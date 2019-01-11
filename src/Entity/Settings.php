@@ -15,18 +15,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SettingsRepository")
  * @ORM\Table(name="ashop_settings")
- * @UniqueEntity(fields="id")
+ * @UniqueEntity(fields="name")
  */
 class Settings
 {
     /**
-    * @ORM\Id()
-    * @ORM\GeneratedValue()
-    * @ORM\Column(type="integer")
-    */
-    private $id;
-
-    /**
+     * @ORM\Id()
      * @ORM\Column(type="string", length=32)
      */
     private $name;
@@ -66,13 +60,5 @@ class Settings
     public function setValue($value): void
     {
         $this->value = $value;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 }

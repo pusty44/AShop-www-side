@@ -32,6 +32,7 @@ class homePageController extends AbstractController
     {
         $servicesRepo = $this->getDoctrine()->getRepository(Services::class);
         $services = $servicesRepo->findAll();
+
         return $this->render('pages/homepage.html.twig', ['services' => $services]);
     }
 }
