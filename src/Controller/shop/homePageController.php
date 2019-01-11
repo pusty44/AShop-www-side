@@ -22,7 +22,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class homePageController extends AbstractController
 {
     /**
-     * Get homepage of NITShop
+     * Get homepage of AShop
      *
      * @Route("/", name="homePage")
      * @return \Symfony\Component\HttpFoundation\Response

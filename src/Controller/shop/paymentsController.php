@@ -120,7 +120,7 @@ class paymentsController extends AbstractController
         
         if(count($prices))
             print_r($prices);
-        else echo 'jebac';
+        else echo 'test - jebac';
         
         return $this->render('pages/valueSelection.html.twig');
     }
