@@ -11,6 +11,7 @@ namespace App\Controller\admin;
 use App\Entity\Settings;
 use App\Entity\Task;
 use App\Form\Type\TaskType;
+use App\Service\publicFunctions;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,6 +25,13 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class settingsController extends AbstractController
 {
+    private $publicFunctions;
+
+    public function __construct(publicFunctions $publicFunctions)
+    {
+        $this->publicFunctions = $publicFunctions;
+    }
+
     /**
      * Function to get/change settings
      *
@@ -35,17 +43,7 @@ class settingsController extends AbstractController
     public function changeSettings(Request $request)
     {
         // declare settingsArray
-        $definedSettings = [
-            'shop_title',
-            'shop_address',
-            'shop_commands',
-            'payment_url_livetime',
-            'steam_bot_login',
-            'steam_bot_password',
-            'stats_target_income',
-            'stats_target_sold_services',
-            'stats_target_send_sms'
-        ];
+        $definedSettings = $this->publicFunctions->getSettingsNames();
 
         // Get settings
         $settingsRepo = $this->getDoctrine()->getRepository(Settings::class);

@@ -24,4 +24,22 @@ class publicFunctions
     {
         return $this->requestStack->getCurrentRequest()->getBaseUrl();
     }
+
+    function getSettingsNames()
+    {
+        return [
+            'shop_title',
+            'shop_address',
+            'shop_commands',
+            'payment_url_livetime',
+            'allow_psc_payment',
+            'debug',
+            'steam_bot_login',
+            'steam_bot_password',
+            'allow_steam_bot_info',
+            'stats_target_income',
+            'stats_target_sold_services',
+            'stats_target_send_sms'
+        ];
+    }
 }

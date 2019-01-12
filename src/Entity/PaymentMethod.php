@@ -38,22 +38,22 @@ class PaymentMethod
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=24)
+     * @ORM\Column(type="string", length=24, nullable=true)
      */
     private $smskey;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @ORM\Column(type="string", length=64, nullable=true)
      */
     private $apikey;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @ORM\Column(type="string", length=64, nullable=true)
      */
     private $apisecret;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $serviceId;
 
