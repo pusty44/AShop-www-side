@@ -1203,7 +1203,6 @@ button {
   .navbar #notificationDropdown {
     width: 260px;
     padding: 1.5rem;
-    height: 280px;
     right: 15px; }
   .navbar #iconMenuDropdown {
     width: 240px;
@@ -1988,40 +1987,19 @@ main {
   padding-top: 0; }
 
 /* 18.Dashboard*/
-.dashboard-line-chart {
-  height: 283px; }
 
-.dashboard-quick-post {
-  min-height: 283px; }
-
-.dashboard-list-with-thumbs {
-  height: 500px; }
-
-.dashboard-logs {
-  height: 270px; }
-
-.dashboard-list-with-user {
-  height: 270px; }
-
-.dashboard-donut-chart {
-  height: 270px; }
-
-.dashboard-small-chart {
-  height: 150px; }
   .dashboard-small-chart .chart {
     height: 60px; }
   .dashboard-small-chart .lead {
     font-size: 1.4rem; }
 
-.dashboard-small-chart-analytics {
-  height: 180px; }
+
   .dashboard-small-chart-analytics .chart {
     height: 80px; }
   .dashboard-small-chart-analytics .lead {
     font-size: 1.4rem; }
 
-.dashboard-filled-line-chart {
-  height: 340px; }
+
   .dashboard-filled-line-chart .chart {
     height: 200px; }
 

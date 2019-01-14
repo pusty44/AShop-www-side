@@ -33,7 +33,7 @@ function loadStyle(href, callback) {
   
   var themeColorsDom = '';
   $("body").append(themeColorsDom);
-  var theme = "dore.light.blue.min.css";
+  var theme = "dore.light.blue.css";
 
   if (typeof Storage !== "undefined") {
     if (localStorage.getItem("theme")) {

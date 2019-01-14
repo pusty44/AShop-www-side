@@ -1,9 +1,0 @@
-{% extends 'frontend/base.html.twig' %}
- 
-{% block body %}
-    <ul>
-        {% for service in services %}
-            <li><b><a href="{{ path('service_selection', {'service': service.getName() }) }}">{{ service.getName() }}</a></b></li>
-        {% endfor %}
-    </ul>
-{% endblock %}

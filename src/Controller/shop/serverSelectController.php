@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: n.o.x
- * Date: 09/01/2019
- * Time: 10:12
- */
-
 namespace App\Controller\shop;
 
 

@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: n.o.x
- * Date: 04.01.2019
- * Time: 01:29
- */
-
 namespace App\Controller\shop;
 
 use App\Entity\Prices;

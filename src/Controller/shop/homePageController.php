@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: n.o.x
- * Date: 07/01/2019
- * Time: 11:25
- */
-
 namespace App\Controller\shop;
 
 use App\Entity\Services;
@@ -14,7 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 /**
- * Controller for homepage.
+ * Controller for common.
  *
  * Class HomePageController
  * @package App\Controller
@@ -22,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class homePageController extends AbstractController
 {
     /**
-     * Get homepage of AShop
+     * Get common of AShop
      *
      * @Route("/", name="homePage")
      * @return \Symfony\Component\HttpFoundation\Response
@@ -32,7 +25,12 @@ class homePageController extends AbstractController
     {
         $servicesRepo = $this->getDoctrine()->getRepository(Services::class);
         $services = $servicesRepo->findAll();
+        $breadcrumbs = [];
 
-        return $this->render('pages/homepage.html.twig', ['services' => $services]);
+        return $this->render('frontend/homepage/index.html.twig', [
+            'services' => $services,
+            'title' => 'Strona główna',
+            'breadcrumbs' => $breadcrumbs
+        ]);
     }
 }

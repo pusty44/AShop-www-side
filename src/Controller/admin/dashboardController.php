@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 /**
- * Controller for admin homepage.
+ * Controller for admin common.
  *
  * Class dashboardController
  * @package App\Controller

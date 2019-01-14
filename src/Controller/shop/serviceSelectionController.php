@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: n.o.x
- * Date: 08/01/2019
- * Time: 19:24
- */
-
 namespace App\Controller\shop;
 
 use App\Entity\BoughtServicesLogs;
