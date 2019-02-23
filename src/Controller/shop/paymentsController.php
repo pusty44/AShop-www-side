@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller\shop;
 
+use App\Entity\PaymentMethod;
 use App\Entity\Prices;
 use App\Entity\Servers;
 use App\Entity\Services;
@@ -15,6 +16,10 @@ use App\Service\shop\payments\paymentType;
 use App\Service\shop\payments\przelewy24Service;
 use App\Service\shop\payments\pukawkaService;
 use App\Service\shop\payments\tPayService;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -77,7 +82,7 @@ class paymentsController extends AbstractController
      * @param string $type
      * @return csSetiService|GoSettiService|hostPlayService|microSmsService|oneShotOneKillService|przelewy24Service|pukawkaService
      */
-    public function paymentDetails(string $type){
+    public function getPaymentAccess(string $type){
         if($type == 'cssetti') $pay = $this->csSeti;
         else if($type == 'gosetti') $pay = $this->goSetti;
         else if($type == 'hostplay') $pay = $this->hostPlay;
@@ -93,10 +98,10 @@ class paymentsController extends AbstractController
 
 
     /**
-     * Default route for payments
-     * @Route("/buy/{service}/{server}/{payment}/", name="payment_selection")
+     * Returns values for given data
+     * @Route("/buy/{service}/{server}/{payment}/")
      */
-    public function paymentTypeSelect($service, $server, $payment)
+    public function loadValues(Request $request, $service, $server, $payment)
     {
         $servicesRepo = $this->getDoctrine()->getRepository(Services::class);
         $serversRepo = $this->getDoctrine()->getRepository(Servers::class);
@@ -109,12 +114,59 @@ class paymentsController extends AbstractController
             throw $this->createNotFoundException('Bad credentials');
 
         // Get prices for specified payment types
-        $prices = $pricesRepo->GetPricesFor($servicesRepo->findOneBy(['name' => $service])->GetId(), $this->paymentType->GetPaymentTypeByName($payment));
-        
-        if(count($prices))
-            print_r($prices);
-        else echo 'test - jebac';
-        
-        return $this->render('pages/valueSelection.html.twig');
+        $prices = $pricesRepo->GetValuesFor($servicesRepo->findOneBy(['name' => $service])->GetId(), $this->paymentType->GetPaymentTypeByName($payment));
+
+        // Send data
+        if ($request->isXmlHttpRequest() || $request->query->get('showJson') == 1)
+            return new JsonResponse($prices);
+        else
+            throw new \Exception('Not allowed usage');
     }
+
+
+    /**
+     * Returns price info for given data
+     * @Route("/buy/{service}/{server}/{payment}/{value}/")
+     */
+    public function loadPriceInfo(Request $request, $service, $server, $payment, $value)
+    {
+        $servicesRepo = $this->getDoctrine()->getRepository(Services::class);
+        $serversRepo = $this->getDoctrine()->getRepository(Servers::class);
+        $pricesRepo = $this->getDoctrine()->getRepository(Prices::class);
+
+        // if there is no service or server with this names or wrong payment type - throw exception
+        if(!$servicesRepo->findOneBy(['name' => $service])
+            || !$serversRepo->findOneBy(['name' => $server])
+            || !($payment == 'sms' || $payment == 'paysafecard' || $payment == 'transfer')
+            || $value <= 0)
+            throw $this->createNotFoundException('Bad credentials');
+
+        // Get prices for specified payment types
+        $prices = $pricesRepo->GetPriceInfo($servicesRepo->findOneBy(['name' => $service])->GetId(), $this->paymentType->GetPaymentTypeByName($payment), $value);
+
+        // Send data
+        if ($request->isXmlHttpRequest() || $request->query->get('showJson') == 1)
+            return new JsonResponse($prices);
+        else
+            throw new \Exception('Not allowed usage');
+    }
+
+    /**
+     * Validate payment centre *
+     * @Route("/payment/{type}/check/{payment}/{code}")
+     */
+    /*public function checkPayment(Request $request, $type, $payment, $code)
+    {
+        $paymentMethodsRepo = $this->getDoctrine()->getRepository(PaymentMethod::class);
+
+        // if there is no service or server with this names or wrong payment type - throw exception
+        if($paymentHandler = $this->getPaymentAccess($type) == false
+            || empty($code))
+            throw $this->createNotFoundException('Bad credentials');
+        else
+        {
+            $paymentInfo = $paymentMethodsRepo->GetPaymentInfo($payment);
+            $paymentHandler->checkSms();
+        }
+    } - pierwsze skonczyc i poprawic system walidacji sms, aby nie przekazywac danych przez komentarze (dodac apisecret, apikey, number) */
 }

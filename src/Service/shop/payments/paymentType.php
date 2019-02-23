@@ -20,8 +20,9 @@ class paymentType
         switch($name)
         {
             case 'sms': return 1;
-            case 'paysafecard': return 2;
-            case 'transfer': return 3;
+            case 'transfer': return 2;
+            case 'paysafecard': return 3;
+            case 'paypal': return 4;
         }
     }
 }

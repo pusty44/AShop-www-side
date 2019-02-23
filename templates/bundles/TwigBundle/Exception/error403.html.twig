@@ -1,5 +1,5 @@
 {% extends 'common/base.html.twig' %}
-{% block title %}404 - Nie znaleziono{% endblock %}
+{% block title %}403 - Brak dostępu{% endblock %}
 {% block bodyclass %}class="background show-spinner"{% endblock %}
 {% block body %}
     <div class="fixed-background"></div>
@@ -13,8 +13,8 @@
                             <a href="/">
                                 <span class="logo-single"></span>
                             </a>
-                            <h3 class="mb-4">Coś popsułeś! Element którego szukasz, nie istnieje.. <i class="iconsmind-Angry"></i></h3>
-                            <p class="display-1 font-weight-bold mb-5">404.</p>
+                            <h3 class="mb-4">Za daleko poleciałeś! Nie masz dostępu do tej strony.. <i class="iconsmind-Angry"></i></h3>
+                            <p class="display-1 font-weight-bold mb-5">403.</p>
                             <a href="{{ path('homePage') }}" class="btn btn-primary btn-lg btn-shadow">Wróć do domu!</a>
                         </div>
                     </div>

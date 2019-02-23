@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91b6a7929c53b329976c03310b6cc33b",
+    "content-hash": "248847aef2b7fa59d000887d659b7d0d",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2927,16 +2927,16 @@
         },
         {
             "name": "symfony/form",
-            "version": "v4.2.1",
+            "version": "v4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
-                "reference": "5ab767b7732154ca6f45c92e30e081178edf30ad"
+                "reference": "48fcd7482d3a946f2ca6f778003ec042534b5d7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/5ab767b7732154ca6f45c92e30e081178edf30ad",
-                "reference": "5ab767b7732154ca6f45c92e30e081178edf30ad",
+                "url": "https://api.github.com/repos/symfony/form/zipball/48fcd7482d3a946f2ca6f778003ec042534b5d7d",
+                "reference": "48fcd7482d3a946f2ca6f778003ec042534b5d7d",
                 "shasum": ""
             },
             "require": {
@@ -3005,7 +3005,7 @@
             ],
             "description": "Symfony Form Component",
             "homepage": "https://symfony.com",
-            "time": "2018-12-06T11:36:58+00:00"
+            "time": "2019-01-30T17:51:38+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -3590,21 +3590,21 @@
         },
         {
             "name": "symfony/orm-pack",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/orm-pack.git",
-                "reference": "1b58f752cd917a08c9c8df020781d9c46a2275b1"
+                "reference": "36c2a928482dc5f05c5c1c1b947242ae03ff1335"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/orm-pack/zipball/1b58f752cd917a08c9c8df020781d9c46a2275b1",
-                "reference": "1b58f752cd917a08c9c8df020781d9c46a2275b1",
+                "url": "https://api.github.com/repos/symfony/orm-pack/zipball/36c2a928482dc5f05c5c1c1b947242ae03ff1335",
+                "reference": "36c2a928482dc5f05c5c1c1b947242ae03ff1335",
                 "shasum": ""
             },
             "require": {
                 "doctrine/doctrine-bundle": "^1.6.10",
-                "doctrine/doctrine-migrations-bundle": "^1.3",
+                "doctrine/doctrine-migrations-bundle": "^1.3|^2.0",
                 "doctrine/orm": "^2.5.11",
                 "php": "^7.0"
             },
@@ -3614,7 +3614,7 @@
                 "MIT"
             ],
             "description": "A pack for the Doctrine ORM",
-            "time": "2017-12-12T01:47:50+00:00"
+            "time": "2019-01-16T09:49:15+00:00"
         },
         {
             "name": "symfony/polyfill-intl-icu",
@@ -4004,16 +4004,16 @@
         },
         {
             "name": "symfony/security-bundle",
-            "version": "v4.2.1",
+            "version": "v4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security-bundle.git",
-                "reference": "705b5852306fb2bbf3b7903e7929eed01fc2c9d9"
+                "reference": "0e1c9003830c5da614e58bd74b2fd0bb7c4569d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/security-bundle/zipball/705b5852306fb2bbf3b7903e7929eed01fc2c9d9",
-                "reference": "705b5852306fb2bbf3b7903e7929eed01fc2c9d9",
+                "url": "https://api.github.com/repos/symfony/security-bundle/zipball/0e1c9003830c5da614e58bd74b2fd0bb7c4569d6",
+                "reference": "0e1c9003830c5da614e58bd74b2fd0bb7c4569d6",
                 "shasum": ""
             },
             "require": {
@@ -4086,7 +4086,7 @@
             ],
             "description": "Symfony SecurityBundle",
             "homepage": "https://symfony.com",
-            "time": "2018-11-14T19:14:06+00:00"
+            "time": "2019-01-16T20:35:37+00:00"
         },
         {
             "name": "symfony/security-core",
@@ -4749,16 +4749,16 @@
         },
         {
             "name": "symfony/validator",
-            "version": "v4.2.1",
+            "version": "v4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "cd35bb14a0e81bd99835e36cac4db1e72ad1939b"
+                "reference": "f051f6bdc89b414a899c4652570352a4cdf5a868"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/cd35bb14a0e81bd99835e36cac4db1e72ad1939b",
-                "reference": "cd35bb14a0e81bd99835e36cac4db1e72ad1939b",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/f051f6bdc89b414a899c4652570352a4cdf5a868",
+                "reference": "f051f6bdc89b414a899c4652570352a4cdf5a868",
                 "shasum": ""
             },
             "require": {
@@ -4834,7 +4834,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2018-12-05T08:06:11+00:00"
+            "time": "2019-01-30T11:44:30+00:00"
         },
         {
             "name": "symfony/var-exporter",
@@ -6306,16 +6306,16 @@
         },
         {
             "name": "symfony/web-server-bundle",
-            "version": "v4.2.1",
+            "version": "v4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/web-server-bundle.git",
-                "reference": "6291444989fc753df2a9c86e5f6d5af4616804f5"
+                "reference": "8f7afc85c27cf53b77a3ae8d2a3d86f537c323a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/web-server-bundle/zipball/6291444989fc753df2a9c86e5f6d5af4616804f5",
-                "reference": "6291444989fc753df2a9c86e5f6d5af4616804f5",
+                "url": "https://api.github.com/repos/symfony/web-server-bundle/zipball/8f7afc85c27cf53b77a3ae8d2a3d86f537c323a3",
+                "reference": "8f7afc85c27cf53b77a3ae8d2a3d86f537c323a3",
                 "shasum": ""
             },
             "require": {
@@ -6361,7 +6361,7 @@
             ],
             "description": "Symfony WebServerBundle",
             "homepage": "https://symfony.com",
-            "time": "2018-11-13T19:11:56+00:00"
+            "time": "2019-01-16T20:35:37+00:00"
         }
     ],
     "aliases": [],
@@ -6372,9 +6372,9 @@
     "platform": {
         "php": "^7.1.3",
         "ext-ctype": "*",
+        "ext-curl": "*",
         "ext-iconv": "*",
-        "ext-json": "*",
-        "ext-curl": "*"
+        "ext-json": "*"
     },
     "platform-dev": []
 }

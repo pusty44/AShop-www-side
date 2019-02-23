@@ -22,8 +22,10 @@
     <link rel="stylesheet" href="{{ asset('/css/vendor/bootstrap-datepicker3.min.css') }}" />
     {% block stylesheets %}{% endblock %}
     <link rel="stylesheet" href="{{ asset('/css/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/css/ajax_loader.css') }}" />
 </head>
-<body id="app-container" class="menu-default">
+<body id="app-container" class="menu-default show-spinner">
+<div id="ajax_loader" class="ajax_loading" style="display: none;"></div>
 {% include('frontend/common/widgets/topbar.html.twig') %}
 {% include('frontend/common/widgets/navigation.html.twig') %}
 <main>
