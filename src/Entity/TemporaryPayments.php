@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TemporaryPaymentsRepository")
  * @ORM\Table(name="ashop_temporary_payments")
- * @UniqueEntity(fields="chcksum")
+ * @UniqueEntity(fields="paymentHash")
  */
 class TemporaryPayments
 {
@@ -23,7 +23,7 @@ class TemporaryPayments
      * @ORM\Column(type="string")
      * @ORM\Id
      */
-    private $chcksum;
+    private $paymentHash;
 
     /**
      * @ORM\ManyToOne(targetEntity="Servers")
@@ -60,17 +60,17 @@ class TemporaryPayments
     /**
      * @return mixed
      */
-    public function getChcksum()
+    public function getPaymentHash()
     {
-        return $this->chcksum;
+        return $this->paymentHash;
     }
 
     /**
-     * @param mixed $chcksum
+     * @param mixed $paymentHash
      */
-    public function setChcksum($chcksum): void
+    public function setPaymentHash($paymentHash): void
     {
-        $this->chcksum = $chcksum;
+        $this->paymentHash = $paymentHash;
     }
 
     /**

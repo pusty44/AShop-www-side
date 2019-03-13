@@ -30,7 +30,7 @@ class Prices
      * @ORM\ManyToOne(targetEntity="Services")
      * @ORM\JoinColumn(name="service", referencedColumnName="id", nullable=true)
      */
-    private $service; // klucz obcy dla ashop_services.id
+    private $service;
 
     /**
      * @ORM\Column(type="string", nullable=true, options={"default": NULL})

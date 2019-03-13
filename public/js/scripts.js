@@ -68,7 +68,6 @@ function LoadValuesForService(service, payment){
     $("#ajax_loader").show();
 
     $.ajax({
-        //url:        '/student/ajax',
         url:        '/buy/' + service + '/' + document.getElementById('server_name').getAttribute('value') + '/' + payment + '/',
         type:       'POST',
         dataType:   'json',
@@ -104,7 +103,6 @@ function LoadValuesForService(service, payment){
             $("html, body").animate({ scrollTop: $(document).height() }, "slow");
 
             toggleValuSelection(true);
-            //changeSelect('state', data['value'], data['value']);
         },
         error : function(xhr, textStatus, errorThrown) {
             $("#ajax_loader").hide();
@@ -125,7 +123,6 @@ function LoadPaymentInfo(service, server, payment, value){
     $("#ajax_loader").show();
 
     $.ajax({
-        //url:        '/student/ajax',
         url:        '/buy/' + service + '/' + server + '/' + payment + '/' + value + '/',
         type:       'POST',
         dataType:   'json',
@@ -169,13 +166,14 @@ function LoadPaymentInfo(service, server, payment, value){
                             '<form>' +
                             '   <div class="form-group">' +
                             '       <label>Kod zwrotny:</label>' +
-                            '       <input type="text" class="form-control" >' +
+                            '       <input type="text" id="smsCode" class="form-control" required>' +
                             '   </div>' +
                             '   <div class="form-group">' +
                             '       <label>SteamID:</label>' +
-                            '       <input type="text" class="form-control" placeholder="STEAM_0:0:12345">' +
+                            '       <input type="text" id="authData" class="form-control" placeholder="STEAM_0:0:12345" required>' +
+                            '       <input type="text" id="displayResponse" class="form-control" placeholder="">' +
                             '   </div>' +
-                            '   <button type="button" class="btn btn-secondary btn-block mb-1">Zapłać</button>' +
+                            '   <button type="button" onclick="PerformPayment(\'sms\', \'' + service + '\', \'' + server + '\', \'' + value + '\')" class="btn btn-secondary btn-block mb-1">Zapłać</button>' +
                             '</form>');
 
                         // fill payment info
@@ -205,6 +203,35 @@ function LoadPaymentInfo(service, server, payment, value){
                 // show modal
                 togglePaymentInfo(true);
             }
+        },
+        error : function(xhr, textStatus, errorThrown) {
+            $("#ajax_loader").hide();
+
+            // Alert (no prices for this payment method)
+            alert('Ajax request failed: ' + errorThrown);
+        }
+    });
+};
+
+// Call payment prepare
+function PerformPayment(type, service, server, value){
+    // show loader
+    $("#ajax_loader").show();
+
+    // prepare variables
+    var authData = $('#authData').val();
+    var smsCode = $('#smsCode').val();
+
+    $.ajax({
+        url:        '/payment/perform/' + type + '/' + service + '/' + server + '/' + value + '/' + authData + '/' + smsCode + '/',
+        type:       'POST',
+        dataType:   'json',
+        async:      true,
+
+        success: function(data, status) {
+            $("#ajax_loader").hide();
+
+            $("#displayResponse").val(data[0]['response']);
         },
         error : function(xhr, textStatus, errorThrown) {
             $("#ajax_loader").hide();

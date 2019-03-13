@@ -1,11 +1,15 @@
 <?php
+
 namespace App\Controller\shop;
 
 use App\Entity\PaymentMethod;
 use App\Entity\Prices;
 use App\Entity\Servers;
 use App\Entity\Services;
+use App\Entity\UserServices;
 
+use App\Entity\Tariffs;
+use App\Entity\TemporaryPayments;
 use App\Service\shop\payments\csSetiService;
 use App\Service\shop\payments\GoSettiService;
 use App\Service\shop\payments\hostPlayService;
@@ -32,6 +36,7 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class paymentsController extends AbstractController
 {
+    // payments
     private $csSeti;
     private $goSetti;
     private $hostPlay;
@@ -41,6 +46,8 @@ class paymentsController extends AbstractController
     private $przelewy24;
     private $tPay;
     private $liveserver;
+
+    // payment type
     private $paymentType;
 
     public function __construct(
@@ -55,16 +62,16 @@ class paymentsController extends AbstractController
         liveserverService $liveserver,
         paymentType $paymentType)
     {
-        $this->csSeti           = $csSetiService;
-        $this->goSetti          = $goSettiService;
-        $this->hostPlay         = $hostPlayService;
-        $this->microSms         = $microSmsService;
-        $this->oneShotOneKill   = $oneShotOneKillService;
-        $this->przelewy24       = $przelewy24Service;
-        $this->pukawka          = $pukawkaService;
-        $this->tPay             = $tPayService;
-        $this->liveserver       = $liveserver;
-        $this->paymentType      = $paymentType;
+        $this->csSeti = $csSetiService;
+        $this->goSetti = $goSettiService;
+        $this->hostPlay = $hostPlayService;
+        $this->microSms = $microSmsService;
+        $this->oneShotOneKill = $oneShotOneKillService;
+        $this->przelewy24 = $przelewy24Service;
+        $this->pukawka = $pukawkaService;
+        $this->tPay = $tPayService;
+        $this->liveserver = $liveserver;
+        $this->paymentType = $paymentType;
     }
 
     /**
@@ -72,7 +79,8 @@ class paymentsController extends AbstractController
      * @Route("/list", name="paymentList")
      * @return array
      */
-    public function paymentList(){
+    public function paymentList()
+    {
         return [];
     }
 
@@ -82,20 +90,50 @@ class paymentsController extends AbstractController
      * @param string $type
      * @return csSetiService|GoSettiService|hostPlayService|microSmsService|oneShotOneKillService|przelewy24Service|pukawkaService
      */
-    public function getPaymentAccess(string $type){
-        if($type == 'cssetti') $pay = $this->csSeti;
-        else if($type == 'gosetti') $pay = $this->goSetti;
-        else if($type == 'hostplay') $pay = $this->hostPlay;
-        else if($type == 'microsms') $pay = $this->microSms;
-        else if($type == 'oneshotonekill') $pay = $this->oneShotOneKill;
-        else if($type == 'przelewy24') $pay = $this->przelewy24;
-        else if($type == 'pukawka') $pay = $this->pukawka;
-        else if($type == 'tpay') $pay = $this->tPay;
-        else if($type == 'liveserver') $pay = $this->liveserver;
+    public function getPaymentAccess(string $type)
+    {
+        if ($type == 'cssetti') $pay = $this->csSeti;
+        else if ($type == 'gosetti') $pay = $this->goSetti;
+        else if ($type == 'hostplay') $pay = $this->hostPlay;
+        else if ($type == 'microsms') $pay = $this->microSms;
+        else if ($type == 'oneshotonekill') $pay = $this->oneShotOneKill;
+        else if ($type == 'przelewy24') $pay = $this->przelewy24;
+        else if ($type == 'pukawka') $pay = $this->pukawka;
+        else if ($type == 'tpay') $pay = $this->tPay;
+        else if ($type == 'liveserver') $pay = $this->liveserver;
         else $pay = false;
         return $pay;
     }
 
+
+    /**
+     * Register a payment and return paymentHash
+     * @param Services $service
+     * @param Servers $server
+     * @param string $auth_data
+     * @param string $amount
+     * @param $date
+     * @return bool|string
+     */
+    public function registerPayment(Services $service, Servers $server, string $auth_data, string $amount, $date)
+    {
+        $time = new \DateTime();
+        $hash = substr(md5($time->format('H:i:s \O\n Y-m-d')), 0, 8);
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $tmpPayment = new TemporaryPayments();
+        $tmpPayment->setPaymentHash($hash);
+        $tmpPayment->setServiceId($service->getId());
+        $tmpPayment->setServerId($server->getId());
+        $tmpPayment->setAuthData($auth_data);
+        $tmpPayment->setAmount($amount);
+        $tmpPayment->setDate($date);
+
+        $entityManager->persist($tmpPayment);
+        $entityManager->flush();
+
+        return $hash;
+    }
 
     /**
      * Returns values for given data
@@ -103,18 +141,19 @@ class paymentsController extends AbstractController
      */
     public function loadValues(Request $request, $service, $server, $payment)
     {
+        // get repo's
         $servicesRepo = $this->getDoctrine()->getRepository(Services::class);
         $serversRepo = $this->getDoctrine()->getRepository(Servers::class);
         $pricesRepo = $this->getDoctrine()->getRepository(Prices::class);
 
         // if there is no service or server with this names or wrong payment type - throw exception
-        if(!$servicesRepo->findOneBy(['name' => $service])
+        if (!$servicesRepo->findOneBy(['name' => $service])
             || !$serversRepo->findOneBy(['name' => $server])
             || !($payment == 'sms' || $payment == 'paysafecard' || $payment == 'transfer'))
             throw $this->createNotFoundException('Bad credentials');
 
         // Get prices for specified payment types
-        $prices = $pricesRepo->GetValuesFor($servicesRepo->findOneBy(['name' => $service])->GetId(), $this->paymentType->GetPaymentTypeByName($payment));
+        $prices = $pricesRepo->GetValuesFor($servicesRepo->findOneBy(['name' => $service])->GetId(), $this->paymentType->getPaymentTypeId($payment));
 
         // Send data
         if ($request->isXmlHttpRequest() || $request->query->get('showJson') == 1)
@@ -130,43 +169,122 @@ class paymentsController extends AbstractController
      */
     public function loadPriceInfo(Request $request, $service, $server, $payment, $value)
     {
+        // get repo's
         $servicesRepo = $this->getDoctrine()->getRepository(Services::class);
         $serversRepo = $this->getDoctrine()->getRepository(Servers::class);
         $pricesRepo = $this->getDoctrine()->getRepository(Prices::class);
 
         // if there is no service or server with this names or wrong payment type - throw exception
-        if(!$servicesRepo->findOneBy(['name' => $service])
+        if (!$servicesRepo->findOneBy(['name' => $service])
             || !$serversRepo->findOneBy(['name' => $server])
-            || !($payment == 'sms' || $payment == 'paysafecard' || $payment == 'transfer')
+            || !($payment == 'sms' || $payment == 'paysafecard' || $payment == 'transfer' || $payment == 'paypal')
             || $value <= 0)
             throw $this->createNotFoundException('Bad credentials');
 
-        // Get prices for specified payment types
-        $prices = $pricesRepo->GetPriceInfo($servicesRepo->findOneBy(['name' => $service])->GetId(), $this->paymentType->GetPaymentTypeByName($payment), $value);
+        // Get price info
+        $price = $pricesRepo->GetPriceInfo($servicesRepo->findOneBy(['name' => $service])->GetId(), $this->paymentType->getPaymentTypeId($payment), $value);
 
         // Send data
         if ($request->isXmlHttpRequest() || $request->query->get('showJson') == 1)
-            return new JsonResponse($prices);
+            return new JsonResponse($price);
         else
             throw new \Exception('Not allowed usage');
     }
 
     /**
      * Validate payment centre *
-     * @Route("/payment/{type}/check/{payment}/{code}")
+     * @Route("/payment/perform/{type}/{service}/{server}/{value}/{authData}/{code}/")
+     * @param Request $request
+     * @param $type (sms|paysafecard|transfer|paypal)
+     * @param $service
+     * @param $server
+     * @param $value
+     * @param $authData
+     * @param $code
+     * @return JsonResponse
+     * @throws \Exception
      */
-    /*public function checkPayment(Request $request, $type, $payment, $code)
+    public function performPayment(Request $request, $type, $service, $server, $value, $authData, $code)
     {
-        $paymentMethodsRepo = $this->getDoctrine()->getRepository(PaymentMethod::class);
+        $ajaxResponse = array();
 
-        // if there is no service or server with this names or wrong payment type - throw exception
-        if($paymentHandler = $this->getPaymentAccess($type) == false
-            || empty($code))
+        // get repo's
+        $tempServicesRepo = $this->getDoctrine()->getRepository(UserServices::class);
+        $servicesRepo = $this->getDoctrine()->getRepository(Services::class);
+        $serversRepo = $this->getDoctrine()->getRepository(Servers::class);
+        $paymentRepo = $this->getDoctrine()->getRepository(PaymentMethod::class);
+        $tariffsRepo = $this->getDoctrine()->getRepository(Tariffs::class);
+        $pricesRepo = $this->getDoctrine()->getRepository(Prices::class);
+
+        if ($this->paymentType->getPaymentTypeId($type) == -1
+            || ($type == 'sms' && empty($code))
+            || !$servicesRepo->findOneBy(['name' => $service])
+            || !($server = $serversRepo->findOneBy(['name' => $server]))
+            || $value < 1) {
             throw $this->createNotFoundException('Bad credentials');
-        else
-        {
-            $paymentInfo = $paymentMethodsRepo->GetPaymentInfo($payment);
-            $paymentHandler->checkSms();
+        } else {
+            // Get price info
+            if ($price = $pricesRepo->GetPriceInfo($servicesRepo->findOneBy(['name' => $service])->GetId(), $this->paymentType->getPaymentTypeId($type), $value)) {
+                // get tariff
+                $tariff = $tariffsRepo->findOneBy(['id' => $price[0]['tariffId']]);
+
+                // initialize payment
+                switch ($type) {
+                    case 'sms':
+                        {
+                            // get payment info
+                            $paymentInfo = $paymentRepo->findOneBy(['id' => $price[0]['paymentId']]);
+
+                            // validate SMS info
+                            $paymentHandler = $this->getPaymentAccess($paymentInfo->getMethodName());
+                            $response = $paymentHandler->checkSms($paymentInfo->getApikey(), $paymentInfo->getApisecret(), $paymentInfo->getServiceId(), $code, $tariff->getSmsNumber(), $tariff->getBrutto() * 100);
+
+                            // add service when response is OK (200)
+                            if ($response == "OK") {
+
+                                // give client's service
+                                $serviceAdded = $tempServicesRepo->addService($price[0]['priceId'], $authData);
+
+                                // print info or throw error when service isn't inserted..
+                                if ($serviceAdded) {
+                                    $ajaxResponse[0]['type'] = 'success';
+                                    $ajaxResponse[0]['response'] = 'Kod prawidłowy, usługa została dodana!';
+                                }
+                                else
+                                {
+                                    $ajaxResponse[0]['type'] = 'error';
+                                    $ajaxResponse[0]['holdTime'] = 'ever'; // hold this message permamently..
+                                    $ajaxResponse[0]['response'] = 'Kod jest prawidłowy, lecz nie byliśmy w stanie dodać Twojej usługi.. Skontaktuj się z administratorem..';
+                                }
+                            } else {
+                                $ajaxResponse[0]['type'] = 'error';
+                                $ajaxResponse[0]['response'] = 'Podany kod jest nieprawidłowy!';
+                                $serviceAdded = $tempServicesRepo->addService($price[0]['priceId'], $server, $authData);
+                                if ($serviceAdded)
+                                    echo 'test';
+                                else echo 'wtf';
+                            }
+                        }
+                    case 'transfer':
+                        {
+
+                        }
+                    case 'paysafecard':
+                        {
+
+                        }
+                    case 'paypal':
+                        {
+
+                        }
+                }
+            }
         }
-    } - pierwsze skonczyc i poprawic system walidacji sms, aby nie przekazywac danych przez komentarze (dodac apisecret, apikey, number) */
+
+        // Send data
+        if ($request->isXmlHttpRequest() || $request->query->get('showJson') == 1)
+            return new JsonResponse($ajaxResponse);
+        else
+            throw new \Exception('Not allowed usage');
+    }// - pierwsze skonczyc i poprawic system walidacji sms, aby nie przekazywac danych przez komentarze (dodac apisecret, apikey, number)
 }

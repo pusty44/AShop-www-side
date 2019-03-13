@@ -2,89 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab2708b4-129e-40dc-be8a-f19b2ec04620" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/css/filter.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/css/filter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/js/jquery.easypiechart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.easypiechart.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/js/jquery.peity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.peity.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/js/jquery.waypoints.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/js/jquery.waypoints.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/js/peity-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/js/peity-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/js/skills-counter-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/js/skills-counter-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/dore.light.blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/dore.light.blue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/adminLogsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/adminLogsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/adminPaymentMethodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/adminPaymentMethodsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/adminUsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/adminUsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/boughtServicesLogsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/boughtServicesLogsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/dashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/dashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/groupsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/groupsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/paymentLogsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/paymentLogsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/pricesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/pricesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/serversController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/serversController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/servicesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/servicesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/settingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/settingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/statsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/statsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/tariffsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/tariffsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/userServicesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/userServicesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/vouchersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/vouchersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/install/installationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/install/installationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/shop/homePageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/shop/homePageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/shop/serverSelectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/shop/serverSelectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Task.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Type/TaskType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/TaskType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/SettingsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/SettingsType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_1s1k.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_1s1k.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_cssetti.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_cssetti.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_gosetti.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_gosetti.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_hostplay.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_hostplay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_liveserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_liveserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_microsms.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_microsms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_p24psc.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_p24psc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_p24sms.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_p24sms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_p24transfer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_p24transfer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_pukawka.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_pukawka.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_tpay.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmAddType_tpay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmEditType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/admin/payment_methods/pmEditType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/AdminLoginLogsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AdminLoginLogsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/AdminLogsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AdminLogsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/BoughtServicesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BoughtServicesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/GroupPermissionsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/GroupPermissionsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/GroupsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/GroupsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/NofficationsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/NofficationsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/shop/paymentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/shop/paymentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Prices.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Prices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/TemporaryPayments.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TemporaryPayments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserServices.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/PaymentMethodRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PaymentMethodRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/PricesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PricesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ServersRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ServersRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ServicesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ServicesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/SettingsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SettingsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TariffsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TariffsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TemporaryPaymentsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TemporaryPaymentsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UrlShortenerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UrlShortenerRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/UserServicesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserServicesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UsersRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UsersRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/VouchersRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/VouchersRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/publicFunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/publicFunctions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/shop/payments/paymentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/shop/payments/paymentType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/steamAuthService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/steamAuthService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/adminbsl.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/adminbsl.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/adminlogs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/adminlogs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/dashboard.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/groups.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/groups.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/paymentlogs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/paymentlogs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/paymentmethods.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/paymentmethods.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/prices.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/prices.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/servers.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/servers.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/services.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/services.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/settings.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/settings.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/stats.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/stats.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/tariffs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/tariffs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/users.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/users.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/usersservices.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/usersservices.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/vouchers.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/vouchers.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/install/install.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/install/install.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/serviceSelection.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/serviceSelection.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/valueSelection.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/valueSelection.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/shop/payments/przelewy24Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/shop/payments/przelewy24Service.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -98,31 +28,90 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="adminPaymentMethodsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/admin/adminPaymentMethodsController.php">
+      <file leaf-file-name="paymentsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/shop/paymentsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2958">
-              <caret line="193" column="57" selection-start-line="193" selection-start-column="35" selection-end-line="193" selection-end-column="57" />
+            <state relative-caret-position="4029">
+              <caret line="261" column="109" selection-start-line="261" selection-start-column="109" selection-end-line="261" selection-end-column="109" />
+              <folding>
+                <element signature="e#39#68#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paymentmethods.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/admin/paymentmethods.html.twig">
+      <file leaf-file-name="Services.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Services.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            <state relative-caret-position="1717">
+              <caret line="108" column="7" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/admin/settings.html.twig">
+      <file leaf-file-name="UserServices.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Entity/UserServices.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" selection-start-column="17" selection-end-column="17" />
+            <state relative-caret-position="459">
+              <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="35" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServicesRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repository/UserServicesRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+              <folding>
+                <element signature="e#116#138#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Prices.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Prices.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="29" column="44" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Servers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Servers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+              <folding>
+                <element signature="e#112#144#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PricesRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repository/PricesRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="przelewy24Service.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Service/shop/payments/przelewy24Service.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -164,7 +153,6 @@
         <option value="$PROJECT_DIR$/src/Form/UsersType.php" />
         <option value="$PROJECT_DIR$/templates/common/security/register.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/shop/securityController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/shop/paymentsController.php" />
         <option value="$PROJECT_DIR$/src/Controller/shop/serverSelectController.php" />
         <option value="$PROJECT_DIR$/src/Controller/shop/serviceSelectionController.php" />
         <option value="$PROJECT_DIR$/templates/pages/homepage.html.twig" />
@@ -183,6 +171,12 @@
         <option value="$PROJECT_DIR$/src/Form/admin/payment_methods/paymentType_p24sms.php" />
         <option value="$PROJECT_DIR$/src/Controller/admin/adminPaymentMethodsController.php" />
         <option value="$PROJECT_DIR$/templates/admin/paymentmethods.html.twig" />
+        <option value="$PROJECT_DIR$/src/Repository/PricesRepository.php" />
+        <option value="$PROJECT_DIR$/src/Entity/UserServices.php" />
+        <option value="$PROJECT_DIR$/src/Controller/shop/paymentsController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Prices.php" />
+        <option value="$PROJECT_DIR$/src/Repository/UserServicesRepository.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Services.php" />
       </list>
     </option>
   </component>
@@ -302,99 +296,85 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="149" />
-    <option name="y" value="109" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="812" />
+    <option name="height" value="565" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="AShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AShop" type="462c0819:PsiDirectoryNode" />
+              <item name="AShop-www-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AShop-www-side" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AShop" type="462c0819:PsiDirectoryNode" />
+              <item name="AShop-www-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AShop-www-side" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AShop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AShop" type="462c0819:PsiDirectoryNode" />
+              <item name="AShop-www-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AShop-www-side" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AShop" type="462c0819:PsiDirectoryNode" />
+              <item name="AShop-www-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AShop-www-side" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AShop" type="462c0819:PsiDirectoryNode" />
+              <item name="AShop-www-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AShop-www-side" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="DataFixtures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AShop" type="462c0819:PsiDirectoryNode" />
+              <item name="AShop-www-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AShop-www-side" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="payment_methods" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AShop" type="462c0819:PsiDirectoryNode" />
+              <item name="AShop-www-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AShop-www-side" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AShop-www-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AShop-www-side" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AShop" type="462c0819:PsiDirectoryNode" />
+              <item name="AShop-www-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AShop-www-side" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Service" type="462c0819:PsiDirectoryNode" />
               <item name="shop" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AShop" type="462c0819:PsiDirectoryNode" />
+              <item name="AShop-www-side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AShop-www-side" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Service" type="462c0819:PsiDirectoryNode" />
               <item name="shop" type="462c0819:PsiDirectoryNode" />
               <item name="payments" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="AShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AShop" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AShop" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -446,17 +426,23 @@
       <workItem from="1547574673475" duration="4198000" />
       <workItem from="1547765354140" duration="2000" />
       <workItem from="1547765404896" duration="1584000" />
+      <workItem from="1551371755274" duration="7002000" />
+      <workItem from="1551466217540" duration="971000" />
+      <workItem from="1551810871309" duration="2998000" />
+      <workItem from="1551883035561" duration="992000" />
+      <workItem from="1551992310340" duration="601000" />
+      <workItem from="1552233951626" duration="34000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33534000" />
+    <option name="totallyTimeSpent" value="46132000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16979167" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17963752" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -465,7 +451,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32897604" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -484,53 +470,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Entity/ServiceEntity.php" />
-    <entry file="file://$PROJECT_DIR$/templates/admin/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/shop/payments/tPayService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="51" column="5" selection-start-line="15" selection-start-column="4" selection-end-line="51" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/shop/payments/microSmsService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="42" selection-start-line="15" selection-start-column="3" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/shop/payments/liveserverService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/doctrine.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/dore.light.blue.min.css" />
     <entry file="file://$PROJECT_DIR$/../warsawcoffeeclub/src/Panel/Controller/BlogController.php" />
     <entry file="file://$PROJECT_DIR$/src/Form/SmsPaymentType.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -570,27 +509,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/shop/paymentsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/shop/serviceSelectionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/shop/serverSelectController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/shop/serviceSelectionController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/shop/serverSelectController.php" />
     <entry file="file://$PROJECT_DIR$/templates/frontend/base.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -636,23 +556,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/common/steamAuthService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/common/steamAuthService.php" />
     <entry file="file://$PROJECT_DIR$/src/Controller/install/installationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -660,9 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding>
-            <element signature="e#6#95#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -673,27 +578,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/common/publicFunctions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/common/publicFunctions.php" />
     <entry file="file://$PROJECT_DIR$/src/Service/shop/payments/csSetiService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
@@ -711,12 +600,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/admin/payment_methods/paymentType_1s1k.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/admin/payment_methods/paymentType_p24psc.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/admin/payment_methods/paymentType_1s1k.php" />
+    <entry file="file://$PROJECT_DIR$/src/Form/admin/payment_methods/paymentType_p24psc.php" />
     <entry file="file://$PROJECT_DIR$/templates/admin/settings.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -724,16 +609,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/admin/payment_methods/paymentType_p24sms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/admin/payment_methods/paymentType_p24sms.php" />
     <entry file="file://$PROJECT_DIR$/src/Controller/admin/adminPaymentMethodsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2958">
+        <state relative-caret-position="666">
           <caret line="193" column="57" selection-start-line="193" selection-start-column="35" selection-end-line="193" selection-end-column="57" />
         </state>
       </provider>
@@ -742,6 +621,80 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/TemporaryPaymentsRepository.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/shop/payments/przelewy24Service.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/PricesRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/AppFixtures.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Servers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding>
+            <element signature="e#112#144#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Prices.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="29" column="44" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/UserServicesRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding>
+            <element signature="e#116#138#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/shop/paymentsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4029">
+          <caret line="261" column="109" selection-start-line="261" selection-start-column="109" selection-end-line="261" selection-end-column="109" />
+          <folding>
+            <element signature="e#39#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="108" column="7" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/UserServices.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
         </state>
       </provider>
     </entry>

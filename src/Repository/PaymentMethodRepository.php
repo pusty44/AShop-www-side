@@ -13,5 +13,18 @@ use Doctrine\ORM\EntityRepository;
 
 class PaymentMethodRepository extends EntityRepository
 {
-
+    /**
+     * Retrieves servers id string like 'id-id-id-id'
+     * @param $id
+     * @return mixed
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function GetAvaibleServersForService($id){
+        $qb = $this->createQueryBuilder('p');
+        $qb->select('p.server')
+            ->where('p.service = :service')
+            ->setParameter('service', $id);
+        $query = $qb->getQuery();
+        return $query->getArrayResult();
+    }
 }

@@ -74,7 +74,7 @@ class PricesRepository extends EntityRepository
      */
     public function GetPriceInfo($serviceid, $paymentType, $value){
         $qb = $this->createQueryBuilder('p');
-        $qb->select('m.smskey', 't.brutto', 't.smsNumber', 'm.type', 'm.name')
+        $qb->select('m.smskey', 't.brutto', 't.smsNumber', 'm.type', 'm.id AS paymentId', 't.id AS tariffId', 'p.id AS priceId')
             ->join('p.tariff', 't', 'WITH', 'p.tariff = t.id')
             ->join('t.paymentMethodId', 'm', 'WITH', 't.paymentMethodId = m.id')
             ->where('p.service = :service')

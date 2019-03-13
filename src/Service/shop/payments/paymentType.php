@@ -15,7 +15,7 @@ class paymentType
      * @param $name
      * @return int
      */
-    function getPaymentTypeByName($name)
+    function getPaymentTypeId($name)
     {
         switch($name)
         {
@@ -23,6 +23,7 @@ class paymentType
             case 'transfer': return 2;
             case 'paysafecard': return 3;
             case 'paypal': return 4;
+            default: -1;
         }
     }
 }
