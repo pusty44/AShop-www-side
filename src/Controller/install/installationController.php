@@ -31,14 +31,16 @@ class installationController extends AbstractController
     /**
      * Get admin dashboard
      *
-     * @Route("/install/", name="install")
+     * @Route("/install/{step}", name="install")
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Exception
      */
-    public function install()
+    public function install(int $step = 1)
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $this->appFixtures->load($entityManager);
-        return $this->render('install/install.html.twig');
+        //$this->appFixtures->load($entityManager);
+        return $this->render('install/install.html.twig', [
+            'step' => $step
+        ]);
     }
 }

@@ -10,6 +10,7 @@ use App\Entity\UserServices;
 
 use App\Entity\Tariffs;
 use App\Entity\TemporaryPayments;
+use App\Repository\PricesRepository;
 use App\Service\shop\payments\csSetiService;
 use App\Service\shop\payments\GoSettiService;
 use App\Service\shop\payments\hostPlayService;
