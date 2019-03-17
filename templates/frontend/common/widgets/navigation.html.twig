@@ -2,7 +2,7 @@
     <div class="main-menu">
         <div class="scroll">
             <ul class="list-unstyled">
-                <li {% if app.request.pathinfo == '/' %}class="active"{% endif %}>
+                <li {% if app.request.pathinfo == '/' or app.request.get('_route') == 'faq'   %}class="active"{% endif %}>
                     <a href="#dashboard">
                         <i class="iconsmind-Shop-4"></i>
                         <span>Sklep</span>
@@ -18,7 +18,7 @@
                         <i class="iconsmind-Cloud-Computer"></i> Serwery
                     </a>
                 </li>
-                <li>
+                <li {% if app.request.get('_route') == 'voucher' %}class="active"{% endif %}>
                     <a href="#vouchers">
                         <i class="iconsmind-Billing"></i> Vouchery
                     </a>
@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ path('faq') }}">
                         <i class="simple-icon-question"></i>F.A.Q.
                     </a>
                 </li>
@@ -105,7 +105,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ path('voucher') }}">
                         <i class="simple-icon-wallet"></i> Zrealizuj kod
                     </a>
                 </li>
