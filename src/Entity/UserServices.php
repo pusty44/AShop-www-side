@@ -31,14 +31,14 @@ class UserServices
      * @ORM\ManyToOne(targetEntity="Servers")
      * @ORM\JoinColumn(name="server", referencedColumnName="id", nullable=true)
      */
-    private $serverId; // klucz obcy dla ashop_servers.id
+    private $server;
 
     /**
      * @ORM\Column(type="integer")
      * @ORM\ManyToOne(targetEntity="Services")
      * @ORM\JoinColumn(name="service", referencedColumnName="id", nullable=true)
      */
-    private $serviceId; // klucz obcy dla ashop_services.id
+    private $service;
 
     /**
      * @ORM\Column(type="integer")
@@ -74,15 +74,15 @@ class UserServices
      */
     public function getServerId()
     {
-        return $this->serverId;
+        return $this->server;
     }
 
     /**
-     * @param mixed $serverId
+     * @param mixed $server
      */
-    public function setServerId($serverId): void
+    public function setServerId($server): void
     {
-        $this->serverId = $serverId;
+        $this->server = $server;
     }
 
     /**
@@ -90,15 +90,15 @@ class UserServices
      */
     public function getServiceId()
     {
-        return $this->serviceId;
+        return $this->service;
     }
 
     /**
-     * @param mixed $serviceId
+     * @param mixed $service
      */
-    public function setServiceId($serviceId): void
+    public function setServiceId($service): void
     {
-        $this->serviceId = $serviceId;
+        $this->service = $service;
     }
 
     /**

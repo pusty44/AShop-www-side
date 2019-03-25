@@ -24,16 +24,21 @@ class csSetiService
     }
 
     /**
-     * Check if sms is valid in csSeti api
-     * @param string $key
+     * @param string $apikey
+     * @param string $apisecret
+     * @param int $serviceid
      * @param string $code
-     * @param string $comment
+     * @param int $number
+     * @param int $amount PLN*100
      * @return mixed
      */
-    function checkSms(string $key, string $code, string $comment){
-        if($key == NULL || $key == '' || $code == NULL || $code == '' || !ctype_alnum($code)) return $this->response->getResponse(100);
+    function checkSms(string $apikey, string $apisecret, int $serviceid, string $code, int $number, int $amount){
+        if($serviceid == NULL || !$serviceid || $code == NULL || $code == '')
+            return $this->response->getResponse(100);
+
         $response = json_decode(file_get_contents(sprintf('https://cssetti.pl/Api/SmsApiV2CheckCode.php?UserId=%d&Code=%d', $key, $code)));
         $value = intval($response);
+
         if($value > 0) return $this->response->getResponse(200);
         /** key or code was not declared */
         else if($value == -3) return $this->response->getResponse(500);

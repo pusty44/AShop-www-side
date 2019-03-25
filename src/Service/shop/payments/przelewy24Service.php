@@ -103,8 +103,6 @@ class przelewy24Service
 
        }
        return array("error" => 0, "token" => $token);
-
-
    }
 
    /**
@@ -121,7 +119,6 @@ class przelewy24Service
        } else {
            return $this->hostLive . "trnRequest/" . $token;
        }
-
    }
 
    /**
@@ -131,12 +128,10 @@ class przelewy24Service
     */
    public function trnVerify()
    {
-
        $crc = md5($this->postData["p24_session_id"] . "|" . $this->postData["p24_order_id"] . "|" . $this->postData["p24_amount"] . "|" . $this->postData["p24_currency"] . "|" . $this->salt);
        $this->addValue("p24_sign", $crc);
        $RES = $this->callUrl("trnVerify", $this->postData);
        return $RES;
-
    }
 
    /**
@@ -148,7 +143,6 @@ class przelewy24Service
     */
    private function callUrl($function, $ARG)
    {
-
        if (!in_array($function, array("trnRegister", "trnRequest", "trnVerify", "testConnection"))) {
            return array("error" => 201, "errorMessage" => "class:Method not exists");
        }
@@ -219,6 +213,7 @@ class przelewy24Service
        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
        $result = curl_exec ($ch);
+
        if ($result == "OK") return $this->response->getResponse(200);
        else if($result == "ERROR 04") return $this->response->getResponse(902);
        else if($result == "ERROR 102") return $this->response->getResponse(904);

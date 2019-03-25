@@ -10,7 +10,6 @@ use App\Entity\UserServices;
 
 use App\Entity\Tariffs;
 use App\Entity\TemporaryPayments;
-use App\Repository\PricesRepository;
 use App\Service\shop\payments\csSetiService;
 use App\Service\shop\payments\GoSettiService;
 use App\Service\shop\payments\hostPlayService;
@@ -244,7 +243,7 @@ class paymentsController extends AbstractController
                             if ($response == "OK") {
 
                                 // give client's service
-                                $serviceAdded = $tempServicesRepo->addService($price[0]['priceId'], $authData);
+                                $serviceAdded = $tempServicesRepo->addService($price[0]['priceId'], $server, $authData);
 
                                 // print info or throw error when service isn't inserted..
                                 if ($serviceAdded) {
@@ -254,16 +253,12 @@ class paymentsController extends AbstractController
                                 else
                                 {
                                     $ajaxResponse[0]['type'] = 'error';
-                                    $ajaxResponse[0]['holdTime'] = 'ever'; // hold this message permamently..
+                                    $ajaxResponse[0]['holdTime'] = 0; // hold this message permamently..
                                     $ajaxResponse[0]['response'] = 'Kod jest prawidłowy, lecz nie byliśmy w stanie dodać Twojej usługi.. Skontaktuj się z administratorem..';
                                 }
                             } else {
                                 $ajaxResponse[0]['type'] = 'error';
                                 $ajaxResponse[0]['response'] = 'Podany kod jest nieprawidłowy!';
-                                $serviceAdded = $tempServicesRepo->addService($price[0]['priceId'], $server, $authData);
-                                if ($serviceAdded)
-                                    echo 'test';
-                                else echo 'wtf';
                             }
                         }
                     case 'transfer':

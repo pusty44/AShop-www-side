@@ -1,8 +1,10 @@
 <?php
 namespace App\Controller\shop;
 
+use App\Entity\BoughtServicesLogs;
 use App\Entity\Servers;
 use App\Entity\Services;
+use App\Entity\UsersEntity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -26,13 +28,21 @@ class homePageController extends AbstractController
     {
         $servicesRepo = $this->getDoctrine()->getRepository(Services::class);
         $serversRepo = $this->getDoctrine()->getRepository(Servers::class);
+        $usersRepo = $this->getDoctrine()->getRepository(UsersEntity::class);
+        $boughtServicesRepo = $this->getDoctrine()->getRepository(BoughtServicesLogs::class);
+
         $services = $servicesRepo->findAll();
         $servers = $serversRepo->findAll();
+        $users = $usersRepo->findAll();
+        $boughtServices = $boughtServicesRepo->findAll();
+
         $breadcrumbs = [];
 
         return $this->render('frontend/homepage/index.html.twig', [
             'services' => $services,
             'servers' => $servers,
+            'users' => $users,
+            'boughtServices' => $boughtServices,
             'title' => 'Strona główna - Sklep Automatyczny!',
             'breadcrumbs' => $breadcrumbs
         ]);
