@@ -9,20 +9,12 @@
     <link rel="stylesheet" href="{{ asset('/font/iconsmind/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('/font/simple-line-icons/css/simple-line-icons.css') }}" />
 
-    <link rel="stylesheet" href="{{ asset('/css/vendor/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/vendor/bootstrap-float-label.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/vendor/fullcalendar.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/vendor/dataTables.bootstrap4.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/vendor/datatables.responsive.bootstrap4.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/vendor/select2.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/vendor/perfect-scrollbar.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/vendor/owl.carousel.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/vendor/bootstrap-stars.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/vendor/nouislider.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/vendor/bootstrap-datepicker3.min.css') }}" />
+    {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_link_tags('dore') }}
+    {{ encore_entry_link_tags('mousetrap') }}
+    {{ encore_entry_link_tags('nouislider') }}
     {% block stylesheets %}{% endblock %}
-    <link rel="stylesheet" href="{{ asset('/css/main.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/ajax_loader.css') }}" />
+    {{ encore_entry_link_tags('scripts') }}
 </head>
 <body id="app-container" class="menu-default show-spinner">
 <div id="ajax_loader" class="ajax_loading" style="display: none;"></div>
@@ -34,26 +26,11 @@
         {% block body %}{% endblock %}
     </div>
 </main>
-<script src="{{ asset('/js/vendor/jquery-3.3.1.min.js') }}"></script>
-<script src="{{ asset('/js/vendor/bootstrap.bundle.min.js') }}"></script>
-
-<script src="{{ asset('/js/vendor/Chart.bundle.min.js') }}"></script>
-<script src="{{ asset('/js/vendor/chartjs-plugin-datalabels.js') }}"></script>
-<script src="{{ asset('/js/vendor/moment.min.js') }}"></script>
-<script src="{{ asset('/js/vendor/fullcalendar.min.js') }}"></script>
-<script src="{{ asset('/js/vendor/datatables.min.js') }}"></script>
-<script src="{{ asset('/js/vendor/perfect-scrollbar.min.js') }}"></script>
-<script src="{{ asset('/js/vendor/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('/js/vendor/progressbar.min.js') }}"></script>
-<script src="{{ asset('/js/vendor/jquery.barrating.min.js') }}"></script>
-<script src="{{ asset('/js/vendor/select2.full.js') }}"></script>
-<script src="{{ asset('/js/vendor/nouislider.min.js') }}"></script>
-<script src="{{ asset('/js/vendor/bootstrap-datepicker.js') }}"></script>
-<script src="{{ asset('/js/vendor/Sortable.js') }}"></script>
-<script src="{{ asset('/js/vendor/mousetrap.min.js') }}"></script>
-
-<script src="{{ asset('/js/dore.script.js') }}"></script>
-<script src="{{ asset('/js/scripts.js') }}"></script>
+{{ encore_entry_script_tags('app') }}
+{{ encore_entry_script_tags('mousetrap') }}
+{{ encore_entry_script_tags('nouislider') }}
+{{ encore_entry_script_tags('dore') }}
+{{ encore_entry_script_tags('scripts') }}
 {% block javascripts %}{% endblock %}
 </body>
 </html>
